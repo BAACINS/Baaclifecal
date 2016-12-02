@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="BaaclifeCal.Master" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ระบบคำนวณมูลค่ากรมธรรม์ ธกส เพิ่มรัก2 12/10</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="CSS/Sitemaster.css" rel="stylesheet" />
+
+</head>
+    <form id="form1" runat="server">  
+        <header>
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" EnablePageMethods="true"></asp:ToolkitScriptManager>
+            &nbsp;      
+            <div style="z-index: 1; position: absolute; left: 80%; top: 1%;">
+                <p style="color: white; font-size: 20px; font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';">
+                   <asp:Label ID="lblNote" runat="server" ForeColor="Red" 
+                            Font-Bold="true" Font-Size="Large" BackColor="White">
+                            แจ้งปัญหาการใช้งานระบบ WAN 6505-6</asp:Label> 
+                </p>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="main-content">
+                </div>            
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+    </form>
+
+</html>

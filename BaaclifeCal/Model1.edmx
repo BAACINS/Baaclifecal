@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BAACLIFECALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_Benefit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="age" Type="nvarchar" Mode="In" />
+          <Parameter Name="savamt" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_fundAmt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="age" Type="nvarchar" Mode="In" />
+          <Parameter Name="savamt" Type="nvarchar" Mode="In" />
+          <Parameter Name="showSubReport" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_PaidUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GENDER" Type="nvarchar" Mode="In" />
+          <Parameter Name="AGE" Type="nvarchar" Mode="In" />
+          <Parameter Name="YEAR" Type="nvarchar" Mode="In" />
+          <Parameter Name="SAVAMT" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Surrender" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GENDERSUR" Type="nvarchar" Mode="In" />
+          <Parameter Name="AGESUR" Type="nvarchar" Mode="In" />
+          <Parameter Name="YEARSUR" Type="nvarchar" Mode="In" />
+          <Parameter Name="SAVAMT" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="BAACLIFECALModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BAACLIFECALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BAACLIFECALEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_Benefit" ReturnType="Collection(BAACLIFECALModel.SP_Benefit_Result)">
+            <Parameter Name="gender" Mode="In" Type="String" />
+            <Parameter Name="age" Mode="In" Type="String" />
+            <Parameter Name="savamt" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_fundAmt" ReturnType="Collection(BAACLIFECALModel.SP_fundAmt_Result)">
+            <Parameter Name="gender" Mode="In" Type="String" />
+            <Parameter Name="age" Mode="In" Type="String" />
+            <Parameter Name="savamt" Mode="In" Type="String" />
+            <Parameter Name="showSubReport" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PaidUp" ReturnType="Collection(BAACLIFECALModel.SP_PaidUp_Result)">
+            <Parameter Name="GENDER" Mode="In" Type="String" />
+            <Parameter Name="AGE" Mode="In" Type="String" />
+            <Parameter Name="YEAR" Mode="In" Type="String" />
+            <Parameter Name="SAVAMT" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Surrender" ReturnType="Collection(BAACLIFECALModel.SP_Surrender_Result)">
+            <Parameter Name="GENDERSUR" Mode="In" Type="String" />
+            <Parameter Name="AGESUR" Mode="In" Type="String" />
+            <Parameter Name="YEARSUR" Mode="In" Type="String" />
+            <Parameter Name="SAVAMT" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_Benefit_Result">
+          <Property Type="Int32" Name="funAmt1" Nullable="true" />
+          <Property Type="Int32" Name="funAmt2" Nullable="true" />
+          <Property Type="Int32" Name="funAmt3" Nullable="true" />
+          <Property Type="Int32" Name="rwd" Nullable="true" />
+          <Property Type="Int32" Name="netMonth" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_fundAmt_Result">
+          <Property Type="String" Name="chkSubrep" Nullable="true" MaxLength="1" />
+          <Property Type="Int32" Name="AGE" Nullable="true" />
+          <Property Type="String" Name="GENDER" Nullable="true" MaxLength="2" />
+          <Property Type="Int32" Name="SAVAMT" Nullable="true" />
+          <Property Type="String" Name="BENEFITCODE" Nullable="true" MaxLength="2" />
+          <Property Type="Int32" Name="FUNDAMT" Nullable="true" />
+          <Property Type="Int32" Name="REWARD" Nullable="true" />
+          <Property Type="String" Name="PAYTYPE" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="INSTALMENT" Nullable="false" MaxLength="3" />
+          <Property Type="Int32" Name="INSTALMENTAMT" Nullable="true" />
+          <Property Type="Int32" Name="DISCOUNT" Nullable="true" />
+          <Property Type="Int32" Name="TOTINSTALMENTAMT" Nullable="true" />
+          <Property Type="Int32" Name="CONTACTAMT" Nullable="true" />
+          <Property Type="Int32" Name="TOTCONTACTAMT" Nullable="true" />
+          <Property Type="Int32" Name="NETGAIN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_PaidUp_Result">
+          <Property Type="Decimal" Name="TOTPAIDAMT" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="String" Name="YEAR" Nullable="true" MaxLength="4" />
+        </ComplexType>
+        <ComplexType Name="SP_Surrender_Result">
+          <Property Type="Decimal" Name="TOTSURRAMT" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="String" Name="YEAR" Nullable="true" MaxLength="4" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BAACLIFECALModelStoreContainer" CdmEntityContainer="BAACLIFECALEntities" >
+          <FunctionImportMapping FunctionImportName="SP_Benefit" FunctionName="BAACLIFECALModel.Store.SP_Benefit">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BAACLIFECALModel.SP_Benefit_Result">
+                <ScalarProperty Name="funAmt1" ColumnName="funAmt1" />
+                <ScalarProperty Name="funAmt2" ColumnName="funAmt2" />
+                <ScalarProperty Name="funAmt3" ColumnName="funAmt3" />
+                <ScalarProperty Name="rwd" ColumnName="rwd" />
+                <ScalarProperty Name="netMonth" ColumnName="netMonth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_fundAmt" FunctionName="BAACLIFECALModel.Store.SP_fundAmt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BAACLIFECALModel.SP_fundAmt_Result">
+                <ScalarProperty Name="chkSubrep" ColumnName="chkSubrep" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="SAVAMT" ColumnName="SAVAMT" />
+                <ScalarProperty Name="BENEFITCODE" ColumnName="BENEFITCODE" />
+                <ScalarProperty Name="FUNDAMT" ColumnName="FUNDAMT" />
+                <ScalarProperty Name="REWARD" ColumnName="REWARD" />
+                <ScalarProperty Name="PAYTYPE" ColumnName="PAYTYPE" />
+                <ScalarProperty Name="INSTALMENT" ColumnName="INSTALMENT" />
+                <ScalarProperty Name="INSTALMENTAMT" ColumnName="INSTALMENTAMT" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+                <ScalarProperty Name="TOTINSTALMENTAMT" ColumnName="TOTINSTALMENTAMT" />
+                <ScalarProperty Name="CONTACTAMT" ColumnName="CONTACTAMT" />
+                <ScalarProperty Name="TOTCONTACTAMT" ColumnName="TOTCONTACTAMT" />
+                <ScalarProperty Name="NETGAIN" ColumnName="NETGAIN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_PaidUp" FunctionName="BAACLIFECALModel.Store.SP_PaidUp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BAACLIFECALModel.SP_PaidUp_Result">
+                <ScalarProperty Name="TOTPAIDAMT" ColumnName="TOTPAIDAMT" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Surrender" FunctionName="BAACLIFECALModel.Store.SP_Surrender">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BAACLIFECALModel.SP_Surrender_Result">
+                <ScalarProperty Name="TOTSURRAMT" ColumnName="TOTSURRAMT" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

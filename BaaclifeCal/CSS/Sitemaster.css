@@ -1,0 +1,328 @@
+﻿
+.dropDownList  {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:1px solid black;
+    outline:none;
+    display: inline-block;
+    /*-webkit-appearance:/*none;
+    -moz-appearance:none;*/
+    cursor:pointer;
+    font-size:23px;
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+}
+
+h1 {
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+}
+    h1#header {
+        color:white;
+    }
+h2 {
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+}
+h3 {
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+}
+hr {
+   display: block;
+   position: relative;
+   padding: 0;
+   margin: 8px auto;
+   height: 2px;
+   width: 100%;
+   max-height: 0;
+   font-size: 1px;
+   line-height: 0;
+   clear: both;
+   border: none;
+   border-top: #000 2px solid ;
+}
+table {
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+}
+
+.underLine {
+    width: 100%; 
+    border-top: solid 1px #000; 
+}
+
+.textBox
+{
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#000;
+    border:1px solid black;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    cursor:pointer;
+    font-size:23px;
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+    text-align:right;
+}
+
+    .textBox:disabled {
+        background: #dddddd;
+    }
+
+.button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+  color: #ffffff;
+  font-size: 23px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  min-width: 100px;
+  width:200px;
+  height:80px;
+  white-space:normal;
+}
+
+.button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.button:disabled {
+    background: #dddddd;
+}
+
+body {
+    line-height: 1;
+    font-size:23px;
+    background-color:darkgreen;
+    border-top:solid 10px #000;
+    margin:0;
+    padding:0;
+}
+
+
+/* main layout
+----------------------------------------------------------*/
+
+.upperbody {
+    /*background-color: darkgreen;*/
+    clear: both;
+    padding-bottom: 35px;
+    padding-top : 35px;
+    margin: 0 auto;
+    width:960px;
+}
+
+.lowerbody {
+
+    clear: both;
+    padding-bottom: 35px;
+    padding-top : 35px;
+    margin: 0 auto;
+    width:960px;
+}
+.main-content {
+    background: url("../Images/logo baaclifecal.png.png") no-repeat center;
+    background-image: url('../Images/logo baaclifecal.png');
+    height: 130px;
+}
+header {
+    padding-top: 20px; 
+    background: url("../Images/hd1.png") no-repeat center;
+    height: 205px;
+}
+    
+footer {
+    clear: both;
+    background-color: #e2e2e2;
+    font-size: .8em;
+    height: 100px;
+}
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+
+}
+/*-----Calendar----------*/
+table#UCcalendar tr td {
+    background-color:transparent;
+    margin: 0;
+	padding: 0;
+	border: 0;
+}
+table#UCcalendar td {
+    padding: 0;
+    font-size: 100%;
+    line-height:normal;margin: 0;
+    height:auto;
+}
+
+.ajax__calendar_days ,.ajax__calendar_day,.ajax__calendar_dayname,.ajax__calendar_year,.ajax__calendar_month {
+    font-size: 18px;
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+}
+
+.ajax__calendar_today,.ajax__calendar_header {
+    font-size: 18px;
+    font: bold;
+    font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+}
+
+/*#detail-table 
+{
+  
+  margin: 0 auto;
+}*/
+
+.detail-table
+{
+  width: 100%;
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: left;
+  background: #efeeef;
+}
+.detail-table tr {
+    padding:15px;
+}
+
+.detail-table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.detail-table tr:nth-child(odd) {
+   background-color:#fff;
+}
+
+.detail-table th {
+    background-color: #3498db;
+    color: white;
+    padding:25px;
+    font-size:30px;
+}
+
+.detail-table td {
+    padding:15px;
+}
+
+.features-table
+{
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-shadow: 0 1px 0 #fff;
+  color: #2a2a2a;
+  background: #efeeef;  
+  background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); /* Firefox 3.6 */
+  background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff)); 
+}
+
+.features-table td
+{
+  height: 45px;
+  line-height: 30px;
+  padding: 0 10px;
+  border-bottom: 1px solid #cdcdcd;
+  box-shadow: 0 1px 0 white;
+  -moz-box-shadow: 0 1px 0 white;
+  -webkit-box-shadow: 0 1px 0 white;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/*Body*/
+.features-table tbody td
+{
+  text-align: center;
+  /*font: normal 12px Verdana, Arial, Helvetica;*/
+  font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+  font-size:23px;
+  /*width: 150px;*/
+}
+
+.features-table tbody td:first-child
+{
+  /*width: 150px;*/
+  text-align: left;
+}
+
+.features-table td:nth-child(2)
+{
+  background: #efefef;
+  background: rgba(144,144,144,0.15);
+  border-right: 1px solid white;
+}
+
+
+.features-table td:nth-child(3)
+{
+  background: #e7f3d4;  
+  background: rgba(184,243,85,0.3);
+}
+
+/*Header*/
+.features-table thead td
+{
+  /*font: bold 1.3em 'trebuchet MS', 'Lucida Sans', Arial;*/  
+  font-family: 'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New';
+  font-size:35px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px; 
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top: 1px solid #eaeaea; 
+}
+
+.features-table thead td:first-child
+{
+  border-top: none;
+}
+
+/*Footer*/
+.features-table tfoot td
+{
+  font: bold 1.4em Georgia;  
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px; 
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom: 1px solid #dadada;
+}
+
+.features-table tfoot td:first-child
+{
+  border-bottom: none;
+}
+/*End Features table------------------------------------------------------------*/
